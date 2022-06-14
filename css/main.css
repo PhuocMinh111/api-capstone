@@ -1,0 +1,10 @@
+#hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, right top, left top, from(#8942a8), to(#ba382f));
+  background: linear-gradient(to left, #8942a8, #ba382f);
+}
+/*# sourceMappingURL=main.css.map */
