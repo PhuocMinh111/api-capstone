@@ -1,5 +1,5 @@
 const URL = ""
-export default class Product {
+export default class Service {
     constructor(list) {
         this.list = list;
     }
