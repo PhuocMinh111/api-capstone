@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 :root {
   font-size: 16px;
@@ -10,44 +11,62 @@
 ::before {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+/* Mixin */
+/* Set các giá trị với màn hình tương ứng */
 #hero {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: -webkit-gradient(linear, right top, left top, from(#8942a8), to(#ba382f));
   background: linear-gradient(to left, #8942a8, #ba382f);
 }
 
 #products {
   height: 20vh;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 100px;
-  display: -ms-grid;
+  transform: translate(-50%, -50%);
   display: grid;
-  grid-auto-rows: minmax(300px, 1fr);
+  gap: 30px;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
   background: transparent;
 }
-
 #products .card {
-  padding: 8px;
+  padding: 8px 10px;
   background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 200px;
   border-radius: 16px;
+  transition: all 0.3s linear;
+  transform: translateY(50px);
+}
+#products .card img {
+  width: 100px;
+}
+#products .card .desc {
+  height: 0;
+  transition: all 0.3s linear;
+  opacity: 0;
+}
+#products .card:hover {
+  transform: scale(1.2);
+}
+#products .card:hover .desc {
+  height: 3rem;
+  opacity: 1;
 }
 
-#products .card:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-/*# sourceMappingURL=main.css.map */
+@media (max-width: 479px) {
+  #products {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(250px, 1fr);
+  }
+}/*# sourceMappingURL=main.css.map */
