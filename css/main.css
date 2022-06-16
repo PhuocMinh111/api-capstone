@@ -82,6 +82,11 @@
   background: transparent;
   border: 2px solid #f7f7f7;
   border-radius: 16px;
+  transition: all 0.3s linear;
+}
+#products .card .footer .addToCart .toCart:hover {
+  background-color: #f7f7f7;
+  color: #2e2f33;
 }
 #products .card:hover {
   height: 230px;
@@ -100,4 +105,13 @@
     grid-template-columns: 1fr;
     grid-auto-rows: minmax(250px, 1fr);
   }
+}
+#cart {
+  position: fixed !important;
+  top: 20px;
+  right: 20px;
+  z-index: 13123213;
+  font-size: 3rem;
+  background: transparent;
+  border: none;
 }/*# sourceMappingURL=main.css.map */
