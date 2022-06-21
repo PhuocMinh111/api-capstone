@@ -118,4 +118,11 @@
 
 .modal-content {
   min-width: 500px;
+}
+.modal-content ul {
+  list-style: none;
+}
+
+.prod-show {
+  border: none;
 }/*# sourceMappingURL=main.css.map */

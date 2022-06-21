@@ -2,6 +2,7 @@ import Service from "./models/service.js";
 import UI from "./models/ui.js";
 import Cart from "./models/cart.js";
 import Products from "./models/products.js";
+import CartItem from "./models/cartItem.js";
 function getEle(id) {
     return document.getElementById(id);
 }
@@ -44,7 +45,8 @@ function addEvent() {
             const id = e.target.id;
             const prod = products.find(id);
             console.log(prod);
-            cart.add(prod);
+            cart.add(new CartItem(prod));
+            ui.renderCart(cart.list);
         })
     })
 }

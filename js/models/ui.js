@@ -29,13 +29,17 @@ export default class UI {
         }, "");
         this.getEle("products").innerHTML = content;
     }
+
+
+
     renderCart(cartList) {
-        const prodArr = cartList.map(item => item.prod);
-        const contentProd = prodArr.reduce((_, item) => {
-            const { image } = item;
+        const content = cartList.reduce((_, item) => {
+            const { img, name, price } = item.payload;
+            console.log(img);
             _ += `
-            <li>
-            <img src="${image}" />
+            <li class="mt-3">
+            <img src="${img}" style="width:50px" />
+            <span>${name} </span>
             </li>
         `;
             return _;
@@ -43,14 +47,6 @@ export default class UI {
         this.getEle("prod-show").innerHTML = content;
 
     }
-    addEvent(cart) {
-        const btns = document.querySelectorAll(".addToCart button")
-        btns.forEach(item => {
-            item.addEventListener('click', (e) => {
-                const id = e.target.id;
-                cart.add(id);
-            })
-        })
-    }
+
 
 }
