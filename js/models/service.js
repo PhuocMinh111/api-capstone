@@ -9,4 +9,11 @@ export default class Service {
       method: "get",
     });
   }
+  add(data) {
+    const {id} = data;
+    return axios({
+      url:URL + `/%{id}`,
+      method:put
+    })
+  }
 }

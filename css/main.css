@@ -114,4 +114,8 @@
   font-size: 3rem;
   background: transparent;
   border: none;
+}
+
+.modal-content {
+  min-width: 500px;
 }/*# sourceMappingURL=main.css.map */
