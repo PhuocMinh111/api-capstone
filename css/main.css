@@ -14,6 +14,11 @@
   box-sizing: border-box;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 /* Mixin */
 /* Set các giá trị với màn hình tương ứng */
 #hero {
@@ -109,11 +114,28 @@
 #cart {
   position: fixed !important;
   top: 20px;
-  right: 20px;
+  right: 50px;
   z-index: 13123213;
   font-size: 3rem;
   background: transparent;
   border: none;
+}
+#cart a:active {
+  border: none;
+}
+#cart img {
+  width: 50px;
+}
+#cart #cart-number {
+  position: absolute;
+  padding: 0;
+  top: 15px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
 }
 
 .modal-content {
@@ -123,6 +145,19 @@
   list-style: none;
 }
 
+#prod-quantity li {
+  min-height: 50px;
+}
+
+@media (max-width: 479px) {
+  #cart {
+    top: 20px;
+    right: 20px;
+  }
+  #cart img {
+    width: 30px;
+  }
+}
 .prod-show {
   border: none;
 }/*# sourceMappingURL=main.css.map */

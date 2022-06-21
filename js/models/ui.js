@@ -34,7 +34,7 @@ export default class UI {
 
     renderCart(cartList) {
         const content = cartList.reduce((_, item) => {
-            const { img, name, price } = item.payload;
+            const { img, name, price } = item;
             console.log(img);
             _ += `
             <li class="mt-3">
@@ -44,7 +44,19 @@ export default class UI {
         `;
             return _;
         }, "");
+        const contentQuantity = cartList.reduce((_, item) => {
+            const { quantity, id } = item;
+            console.log(quantity);
+            _ += `
+            <li id="${id}" class="quantity mt-3">
+            <span class="down text-primary"> </span>
+            <h5 class="">${quantity}</h5>
+            <span class="up text-primary"><i class="fas fa-plus"></i></span>
+            </li>`
+            return _;
+        }, "")
         this.getEle("prod-show").innerHTML = content;
+        this.getEle("prod-quantity").innerHTML = contentQuantity;
 
     }
 
