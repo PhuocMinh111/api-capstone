@@ -1,7 +1,7 @@
 import Service from "./models/service.js";
 import UI from "./models/ui.js";
 import Cart from "./models/cart.js";
-import Utils from "./models/utils.js";
+import Products from "./models/products.js";
 function getEle(id) {
     return document.getElementById(id);
 }
@@ -12,29 +12,42 @@ function loader(isLoad) {
 const s = new Service();
 const ui = new UI();
 const cart = new Cart();
-const u = new Utils();
+const products = new Products();
+
+
+
 function getProducts() {
     s.get()
         .then((res) => {
             const data = res.data;
             console.log(data);
             ui.renderProducts(data);
-            ui.addEvent(cart);
+            products.addList(data);
+            addEvent();
             loader(false)
         })
         .catch((err) => { });
 }
-// function addEvent() {
-//     const waitload = function () {
-//         setInterval(() => {
-//             const btns = document.querySelectorAll('.addToCart button');
-//             if (btns.length > 0) clearInterval(waitload);
-//             console.log(btns);
-//         }, 200)
-//     }
-//     waitload();
 
 
+
+
+
+
+
+
+
+function addEvent() {
+    const btns = document.querySelectorAll(".addToCart button")
+    btns.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const id = e.target.id;
+            const prod = products.find(id);
+            console.log(prod);
+            cart.add(prod);
+        })
+    })
+}
 // }
 // addEvent();
 getProducts();

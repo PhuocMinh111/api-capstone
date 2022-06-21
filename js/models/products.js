@@ -1,12 +1,12 @@
 export default class Products {
     constructor(list) {
-        this.list = list;
-        this.addId();
+        this.list = list || [];
     }
-    addId() {
-        this.list = this.list.map((item, index) => {
-            item[id] = index;
-            return item;
-        })
+    addList(data) {
+        this.list = data;
+        console.log(this.list);
+    }
+    find(id) {
+        return this.list.find(item => item.id == id);
     }
 }
