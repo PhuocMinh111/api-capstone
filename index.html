@@ -44,11 +44,12 @@
   <!-- Button trigger modal -->
   <button type="button" id="cart" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
     <span id="cart-number" class="bg-success">
-      <h6 class="text-light">9</h6>
+      <h6 class="text-light"></h6>
     </span>
     <img src="./asset/cart.png" alt="" srcset="">
   </button>
-
+<div class="" id="hero"></div>
+<div id="loader"></div>
   <!-- Modal -->
   <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -73,14 +74,23 @@
             </div>
           </div>
           <div class="row" id="prod-data">
-            <div class="col-lg-10 col-md-8">
+            <div class="col-lg-8 col-md-8">
               <ul id="prod-show" class=""></ul>
             </div>
-            <div id="prod-quantity" class="col-lg-2 col-md-4">
-              <!--  -->
+            <div id="prod-quantity" class="col-lg-4 col-md-4">
+              
+            </div>
+          </div>
+          <div class="total form-group">
+            <div class="">
+              <h3>total: </h3>
+            </div>
+            <div  class="">
+                <h4 id="total-price"></h4>
             </div>
           </div>
           <div class="modal-footer">
+            
             <button
               type="button"
               class="btn btn-secondary"
