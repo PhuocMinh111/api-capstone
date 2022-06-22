@@ -11,15 +11,16 @@ export default class UI {
     renderProducts(data) {
         const content = data.reduce((_, item) => {
             const { img, id, desc, type, price, name } = item;
+            const ID = Number.parseInt(id);
             _ += `
         <div  class="card">
         <img src="${img}" alt="phone"/>
         <div class="footer text-light">
         <h4 class="name">${name}</h4>
         <p class="desc">${desc} </p>
-        <div class="addToCart"x>
+        <div class="addToCart">
         <span class="price">${price}</span>
-        <button data-toggle="modal" data-target="#modelId" class="btn btn-light toCart" >add</button>
+        <button id="${ID}" data-toggle="modal" data-target="#modelId" class="btn btn-light toCart" >add</button>
         </div>
         </div>
         </div>
@@ -28,26 +29,36 @@ export default class UI {
         }, "");
         this.getEle("products").innerHTML = content;
     }
-    renderCart(data) {
-        const content = data.reduce((_, item) => {
-            const { img, id, desc, type, price, name } = item;
+
+
+
+    renderCart(cartList) {
+        const content = cartList.reduce((_, item) => {
+            const { img, name, price } = item;
+            console.log(img);
             _ += `
-        <div  class="card">
-        <img src="${img}" alt="phone"/>
-        <div class="footer text-light">
-        <h4 class="name">${name}</h4>
-        <p class="desc">${desc} </p>
-        <div class="addToCart"x>
-        <span class="price">${price}</span>
-        <button data-toggle="modal" data-target="#modelId" class="btn btn-light toCart" >add</button>
-        </div>
-        </div>
-        </div>
+            <li class="mt-3">
+            <img src="${img}" style="width:50px" />
+            <span>${name} </span>
+            </li>
         `;
             return _;
         }, "");
-        this.getEle("products").innerHTML = content;
+        const contentQuantity = cartList.reduce((_, item) => {
+            const { quantity, id } = item;
+            console.log(quantity);
+            _ += `
+            <li id="${id}" class="quantity mt-3">
+            <span class="down text-primary"> </span>
+            <h5 class="">${quantity}</h5>
+            <span class="up text-primary"><i class="fas fa-plus"></i></span>
+            </li>`
+            return _;
+        }, "")
+        this.getEle("prod-show").innerHTML = content;
+        this.getEle("prod-quantity").innerHTML = contentQuantity;
 
     }
+
 
 }
