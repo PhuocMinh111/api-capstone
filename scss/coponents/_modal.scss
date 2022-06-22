@@ -1,9 +1,16 @@
 #cart {
-    position: fixed !important;
-    top: 20px;
+  position: fixed !important;
+  bottom: 50px;
+  right: 50px;
+  z-index: 13123213;
+  font-size: 3rem;
+  background: blue;
+  border: none;
+}
+
+@include mobile {
+  #cart {
+    bottom: 20px;
     right: 20px;
-    z-index: 13123213;
-    font-size: 3rem;
-    background: transparent;
-    border: none;
+  }
 }
