@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
 
-<head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css"
+      integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css"
     integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ=="
@@ -19,21 +37,19 @@
   <link rel="stylesheet" href="./css/main.css" />
 </head>
 
-<body>
-  <div id="hero"></div>
-
-  <div class="container my-auto" id="products">
-    <div id="loader">
+    <div class="container my-auto" id="products">
+      <div id="loader"></div>
     </div>
   </div>
   <!-- Button trigger modal -->
   <button type="button" id="cart" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
     <span id="cart-number" class="bg-success">
-      <h6 class="text-light">9</h6>
+      <h6 class="text-light"></h6>
     </span>
     <img src="./asset/cart.png" alt="" srcset="">
   </button>
-
+<div class="" id="hero"></div>
+<div id="loader"></div>
   <!-- Modal -->
   <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -58,17 +74,32 @@
             </div>
           </div>
           <div class="row" id="prod-data">
-            <div class="col-lg-10 col-md-8">
+            <div class="col-lg-8 col-md-8">
               <ul id="prod-show" class=""></ul>
             </div>
-            <div id="prod-quantity" class="col-lg-2 col-md-4">
-              <!--  -->
+            <div id="prod-quantity" class="col-lg-4 col-md-4">
+              
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save</button>
+          <div class="total form-group">
+            <div class="">
+              <h3>total: </h3>
+            </div>
+            <div  class="">
+                <h4 id="total-price"></h4>
+            </div>
+          </div>
+          <div class="modal-footer">
+            
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
         </div>
       </div>
     </div>
