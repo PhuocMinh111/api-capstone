@@ -54,9 +54,15 @@ export default class UI {
             <span class="up text-primary"><i class="fas fa-plus"></i></span>
             </li>`
             return _;
-        }, "")
+        }, "");
+        const numberProd = cartList.reduce((_, item) => {
+            const amount = parseInt(item.quantity);
+            _ += amount;
+            return _;
+        }, 0)
         this.getEle("prod-show").innerHTML = content;
         this.getEle("prod-quantity").innerHTML = contentQuantity;
+        this.getEle('prod-quantity').innerHTML = numberProd;
 
     }
 
