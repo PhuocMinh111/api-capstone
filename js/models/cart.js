@@ -24,6 +24,11 @@ export default class Cart {
         if (!added) this.list.push(prod);
         console.log(this.list);
     }
+
+
+    remove(id) {
+        this.list = this.list.filter(item => item.id != id);
+    }
 }
 
 

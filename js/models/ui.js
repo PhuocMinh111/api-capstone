@@ -2,7 +2,7 @@ export default class UI {
   // constructor(data) {
   //     this.data = data;
   // }
-  render(data) {}
+  render(data) { }
   getEle(id) {
     return document.getElementById(id);
   }
@@ -39,16 +39,22 @@ export default class UI {
         `;
       return _;
     }, "");
+
+
+
     const contentQuantity = cartList.reduce((_, item) => {
       const { quantity, id } = item;
       console.log(quantity);
       _ += `
             <li id="${id}" class="quantity mt-3">
             <h5 class="">${quantity}</h5>
-            <button id="del" class="btn ml-3 btn-danger">del</button>
+            <button  class="del btn ml-3 btn-danger">remove</button>
             </li>`;
       return _;
     }, "");
+
+
+
     const numberProd = cartList.reduce((_, item) => {
       const { quantity } = item;
       _ += quantity;
@@ -62,8 +68,10 @@ export default class UI {
       //   return finalPrice;
       return _;
     }, 0);
-    console.log(totalPrice);
-    console.log(numberProd);
+
+
+
+
     this.getEle("total-price").innerHTML = `${totalPrice} $`;
     this.getEle("prod-show").innerHTML = content;
     this.getEle("prod-quantity").innerHTML = contentQuantity;

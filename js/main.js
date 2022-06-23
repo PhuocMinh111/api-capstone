@@ -49,6 +49,16 @@ function addEvent() {
             ui.renderCart(cart.list);
         })
     })
+    document.getElementById("prod-quantity").addEventListener('click', (e) => {
+        const isButton = e.target.nodeName == "BUTTON";
+        if (!isButton) return;
+        const button = e.target;
+        const id = button.parentNode.id;
+        console.log(id);
+        cart.remove(id);
+        ui.renderCart(cart.list)
+
+    })
 }
 // }
 // addEvent();
