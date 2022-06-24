@@ -1,11 +1,12 @@
 #loader {
-    @include center();
+    // @include center();
     width: 70px;
     height: 70px;
     border-radius: 50%;
     border: 5px solid #34d399;
     border-top: 5px solid #bbf7d0;
     animation: spin 2s infinite linear;
+    display: inline-block;
 }
 
 @keyframes spin {

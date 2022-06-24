@@ -6,10 +6,7 @@ import CartItem from "./models/cartItem.js";
 function getEle(id) {
     return document.getElementById(id);
 }
-function loader(isLoad) {
-    if (isLoad) return;
-    document.getEle('loader').style.display = none;
-}
+
 const s = new Service();
 const ui = new UI();
 const cart = new Cart();
@@ -25,17 +22,10 @@ function getProducts() {
             ui.renderProducts(data);
             products.addList(data);
             addEvent();
-            loader(false)
+            getEle("loader").style.display = "none";
         })
         .catch((err) => { });
 }
-
-
-
-
-
-
-
 
 
 function addEvent() {
@@ -48,6 +38,26 @@ function addEvent() {
             cart.add(new CartItem(prod));
             ui.renderCart(cart.list);
         })
+    })
+    document.getElementById("prod-quantity").addEventListener('click', (e) => {
+        const isButton = e.target.nodeName == "BUTTON" && e.target.id == "del" || e.target.id == "add";
+        if (!isButton) return;
+        const type = e.target.id;
+        if (type == "del") {
+            const button = e.target;
+            const id = button.parentNode.id;
+            console.log(id);
+            cart.removeItem(id);
+            cart.checkQuantity();
+            ui.renderCart(cart.list);
+        }
+        if (type == "add") {
+            const button = e.target;
+            const id = button.parentNode.id;
+            console.log(id);
+            cart.addItem(id);
+            ui.renderCart(cart.list);
+        }
     })
 }
 // }

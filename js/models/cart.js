@@ -24,6 +24,30 @@ export default class Cart {
         if (!added) this.list.push(prod);
         console.log(this.list);
     }
+    checkQuantity() {
+        this.list = this.list.filter(item => item.quantity !== 0);
+    }
+
+    removeItem(id) {
+        this.list = this.list.map(item => {
+            if (item.id !== id) return item;
+            if (item.id == id) {
+                const { quantity } = item;
+                item = { ...item, quantity: quantity - 1 };
+                if (item.quantity >= 0) return item;
+            }
+        })
+    }
+
+    addItem(id) {
+        this.list = this.list.map(item => {
+            if (item.id !== id) return item;
+            if (item.id == id) {
+                const { quantity } = item;
+                return item = { ...item, quantity: quantity + 1 };
+            }
+        })
+    }
 }
 
 

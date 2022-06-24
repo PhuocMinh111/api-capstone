@@ -44,11 +44,18 @@
   li {
     min-height: 50px;
   }
+
   h5 {
     display: inline-block !important;
   }
+
   .del {
     display: inline;
+  }
+
+  button {
+    font-size: 10px;
+    font-weight: 500;
   }
 }
 

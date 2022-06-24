@@ -6,4 +6,11 @@
   height: 100vh;
   z-index: -12213;
   background: linear-gradient(to left, #8942a8, #ba382f);
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
